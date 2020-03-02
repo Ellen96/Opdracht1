@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  teGokkenGetal:number=Math.floor((Math.random() * 120) + 1);
   title = 'first-app';
 }
+
