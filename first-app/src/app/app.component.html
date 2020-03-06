@@ -1,5 +1,24 @@
 <!DOCTYPE html>
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  
+  <h1>Raad het getal!!</h1>
+  <div>Je  hebt in totaal 5 minuten om het getal tussen 0 en 120 te raden.</div>
+  <div>Je krijgt ook maximaal 10 beurten om te raden.</div>
+  <div ng-bind="counter"></div>
+  <label for="ingegevenGetal">Getal ingegeven</label>
+  <input type="number" id="ingegevenGetal">
+  <button mat-button (click)="clickCount()">Het ingegeven getal</button>
+  <br> <br>  
+  <input type="text" id="controleAntwoord">
+  <div></div>
+  <div>Je hebt al {{count}} keer geprobeerd.</div>
+
+  <div>{{teGokkenGetal}}</div> 
+
 <div>
-    
-  <a></a>
 </div>
+
+</body>
