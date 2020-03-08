@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Button } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,31 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  teGokkenGetal:number=Math.floor((Math.random() * 120) + 1);
-  count: number=0;
-  ingegevenGetal = +(document.getElementById("ingegevenGetal"));
-  controleAntwoord = document.getElementById("controleAntwoord");
-  clickCount():void{this.count++;
-    if(this.ingegevenGetal==this.teGokkenGetal)
-    { alert("Goed geraden je hebt gewonnen.");}
-    else
-    {
-    alert("Probeer opnieuw.");
-    }
-  };
+
   title = 'first-app';
+  afwijking: number;
+  aantalGokken: number;
+  teGokkenGetal: number;
+  gok: number;
+  spelGewonnen:boolean;
+
+  constructor() {
+    this.restartSpel();
+  }
+  restartSpel() {
+    this.aantalGokken = 0;
+    this.teGokkenGetal = Math.floor(Math.random() * 100 + 1);
+    this.gok = null;
+    this.afwijking = null;
+    this.spelGewonnen = false;
+  }
+  controleGok() {
+    this.afwijking = this.teGokkenGetal - this.gok;
+    this.aantalGokken = this.aantalGokken + 1;
+    if(this.afwijking===0)
+    {this.spelGewonnen=true;   
+    }
+  }
+  
   
 }
