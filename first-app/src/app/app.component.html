@@ -8,13 +8,15 @@
     <h2>Raad het nummer !</h2>
       
         <div>
-            <p>Raad het computer gegenereerd nummer tussen 1 and 100.</p>
+            <p>Raad het computer gegenereerd nummer tussen 1 and 100.
+              Je hebt 10 gokken en 5 minuten om dit te doen.
+            </p>
          </div>
       
      <div>
        <label>Jou gok: </label>
-       <input [disabled]="spelGewonnen" type="number" [value]="gok" (input)="gok = $event.target.value" />
-       <button mat-button="primary" (click)="controleGok()">Verify</button>
+       <input [disabled]="spelGewonnen||spelVerloren" type="number" [value]="gok" (input)="gok = $event.target.value" />
+       <button mat-button="primary" (click)="controleGok()">Controler</button>
         
        <button mat-button="warn" (click)="restartSpel()">Nieuw spel</button>
       <p>gok : {{gok}}</p>
@@ -28,6 +30,7 @@
     <p>Aantal gokken :
       <span>{{aantalGokken}}</span>
     </p>
+    <p> Je hebt nog <time>{{afteller.min}}</time> minuten en <time>{{afteller.sec}}</time> seconden.</p>
 </div>
 </div>
 
